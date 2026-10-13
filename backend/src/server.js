@@ -31,8 +31,27 @@ app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
 // Static uploads folder
-const uploadsPath = path.join(__dirname, '../uploads');
+const IS_VERCEL = Boolean(process.env.VERCEL);
+const uploadsPath = IS_VERCEL ? path.join('/tmp', 'uploads') : path.join(__dirname, '../uploads');
+if (IS_VERCEL && !fs.existsSync(uploadsPath)) {
+  fs.mkdirSync(uploadsPath, { recursive: true });
+}
 app.use('/uploads', express.static(uploadsPath));
+
+// Lazy initialization hook for serverless invocations
+let isAppInitialized = false;
+app.use(async (req, res, next) => {
+  if (!isAppInitialized) {
+    isAppInitialized = true;
+    try {
+      await initDemoUser();
+      await seedInitialDocuments();
+    } catch (err) {
+      logger.warn('Serverless startup initialization warning', { error: err.message });
+    }
+  }
+  next();
+});
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {

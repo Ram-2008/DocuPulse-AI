@@ -7,8 +7,10 @@ import { logger } from '../utils/logger.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const DATA_DIR = path.join(__dirname, '../../data');
+const IS_VERCEL = Boolean(process.env.VERCEL);
+const DATA_DIR = IS_VERCEL ? path.join('/tmp', 'data') : path.join(__dirname, '../../data');
 const DB_FILE = path.join(DATA_DIR, 'docupulse.db.json');
+const SEED_FILE = path.join(__dirname, '../../data', 'docupulse.db.json');
 
 // Ensure data directory exists
 if (!fs.existsSync(DATA_DIR)) {
@@ -31,14 +33,18 @@ const loadDatabase = () => {
     if (fs.existsSync(DB_FILE)) {
       const raw = fs.readFileSync(DB_FILE, 'utf-8');
       dbData = JSON.parse(raw);
-      // Ensure all collections exist
-      dbData.users = dbData.users || [];
-      dbData.documents = dbData.documents || [];
-      dbData.auditLogs = dbData.auditLogs || [];
-      dbData.chats = dbData.chats || [];
+    } else if (IS_VERCEL && fs.existsSync(SEED_FILE)) {
+      const raw = fs.readFileSync(SEED_FILE, 'utf-8');
+      dbData = JSON.parse(raw);
+      saveDatabase();
     } else {
       saveDatabase();
     }
+    // Ensure all collections exist
+    dbData.users = dbData.users || [];
+    dbData.documents = dbData.documents || [];
+    dbData.auditLogs = dbData.auditLogs || [];
+    dbData.chats = dbData.chats || [];
   } catch (error) {
     logger.error('Failed to read database file, initializing default', { error: error.message });
     dbData = { ...defaultData };

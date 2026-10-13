@@ -1,9 +1,28 @@
 # Deployment Guide — DocuPulse AI
 
 This guide walks you through deploying **DocuPulse AI** to production:
-- **Frontend**: [Vercel](https://vercel.com/) or [Netlify](https://www.netlify.com/)
-- **Backend**: [Render](https://render.com/) or [Railway](https://railway.app/)
-- **Database**: SQLite (built-in persistent disk) or [Supabase](https://supabase.com/) / [Neon](https://neon.tech/)
+- **Unified Multi-Service (Vercel)**: Both Frontend + Backend in a single project via `vercel.json` Services
+- **Alternative Standalone Frontend**: [Vercel](https://vercel.com/) or [Netlify](https://www.netlify.com/)
+- **Alternative Standalone Backend**: [Render](https://render.com/) or [Railway](https://railway.app/)
+- **Database**: In-memory JSON with persistent `/tmp` seed / SQLite or [Supabase](https://supabase.com/) / [Neon](https://neon.tech/)
+
+---
+
+## 1. Unified Deployment via Vercel Services (Recommended)
+
+DocuPulse AI is pre-configured with root [`vercel.json`](file:///c:/OneDrive/Desktop/docement%20for%20hackthon%27/vercel.json) to deploy both frontend (Vite) and backend (Express) as independent services within a single Vercel project:
+
+1. Import the root repository in [Vercel](https://vercel.com/).
+2. Vercel automatically detects the `services` defined in `vercel.json`:
+   - **`backend`**: Express API service rooted at `backend/`
+   - **`frontend`**: Vite React SPA rooted at `frontend/`
+3. Configure project environment variables in Vercel:
+   - `JWT_SECRET`: `<generate-a-strong-secret-key>`
+   - `JWT_EXPIRES_IN`: `7d`
+   - `GEMINI_API_KEY`: `<your-google-gemini-api-key>`
+   - `NODE_ENV`: `production`
+4. Deploy! Vercel routes `/api/*` and `/uploads/*` directly to `backend`, and `/*` to `frontend`.
+5. Local multi-service testing: run `vercel dev` or `npx vercel dev -L` from the root directory.
 
 ---
 
