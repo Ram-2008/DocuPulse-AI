@@ -1,0 +1,48 @@
+METROPOLITAN HEALTHCARE & CLINICAL LABORATORIES
+DEPARTMENT OF INTERNAL MEDICINE & PATHOLOGY
+780 Bellevue Medical Center, Boston, MA 02115
+CLIA # 22D0948210 | Accreditation: CAP # 89401
+
+PATIENT DIAGNOSTIC REPORT
+
+PATIENT DEMOGRAPHICS:
+Patient Name: Eleanor Vance
+Patient ID / MRN: PT-94821
+Date of Birth: 1968-06-14 (Age: 57) | Sex: Female
+Date of Service: 2026-03-20
+Attending Physician: Dr. Marcus Reynolds, MD (NPI: 1948201948)
+
+PRIMARY CLINICAL DIAGNOSES:
+1. Type 2 Diabetes Mellitus without acute complications (ICD-10: E11.9)
+2. Essential Primary Hypertension (ICD-10: I10)
+3. Mixed Hyperlipidemia (ICD-10: E78.2)
+
+CURRENT MEDICATIONS:
+- Metformin HCl 500 mg oral tablet, Twice daily with meals
+- Lisinopril 10 mg oral tablet, Once daily in morning
+- Atorvastatin 20 mg oral tablet, Once daily at bedtime
+
+VITAL SIGNS (AT PRESENTATION):
+Blood Pressure: 128/82 mmHg (Sitting)
+Heart Rate: 72 bpm, Regular
+Respiratory Rate: 16 breaths/min
+Body Mass Index (BMI): 27.4 kg/m2
+
+COMPREHENSIVE METABOLIC & LIPID LAB PANEL:
+Test Name              | Result    | Units     | Reference Range | Flag
+-------------------------------------------------------------------------
+Fasting Blood Glucose  | 138       | mg/dL     | 70 - 99         | HIGH [!]
+Hemoglobin A1c (HbA1c) | 7.1       | %         | < 5.7           | HIGH [!]
+Total Cholesterol      | 185       | mg/dL     | < 200           | NORMAL
+LDL Cholesterol        | 104       | mg/dL     | < 100           | BORDERLINE
+HDL Cholesterol        | 52        | mg/dL     | > 50            | NORMAL
+Serum Triglycerides    | 145       | mg/dL     | < 150           | NORMAL
+Serum Creatinine       | 0.9       | mg/dL     | 0.6 - 1.2       | NORMAL
+eGFR (CKD-EPI)         | 84        | mL/min    | > 60            | NORMAL
+
+PHYSICIAN IMPRESSION & RECOMMENDATIONS:
+Patient shows sub-optimal glycemic control with HbA1c at 7.1%. Renal function preserved. Recommend dietary consultation, continuation of Metformin, and repeat HbA1c and metabolic panel in 90 days.
+
+Electronically Signed:
+Dr. Marcus Reynolds, MD
+Director of Endocrinology, Metropolitan Health

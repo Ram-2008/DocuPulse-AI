@@ -1,0 +1,30 @@
+MUTUAL NON-DISCLOSURE AND INTELLECTUAL PROPERTY AGREEMENT
+
+This Mutual Non-Disclosure Agreement ("Agreement") is entered into as of February 1, 2026 ("Effective Date"), by and between:
+
+PARTIES:
+1. CyberScale Corp, a Delaware corporation having its principal office at 500 Tech Parkway, Suite 200, Austin, TX 78701 ("Disclosing Party" or "CyberScale")
+2. DataSync Global Inc., a California corporation having its principal office at 1200 Market Street, San Francisco, CA 94103 ("Receiving Party" or "DataSync")
+
+1. PURPOSE
+The parties wish to explore a potential strategic technology integration and business collaboration concerning cloud security automation (the "Purpose").
+
+2. CONFIDENTIAL INFORMATION
+"Confidential Information" means all non-public, proprietary information disclosed by either party, including trade secrets, software code, customer data, and system architectures.
+
+3. TERM AND TERMINATION
+This Agreement shall remain in effect for two (2) years from the Effective Date (expiring February 1, 2028). Either party may terminate this Agreement upon thirty (30) days prior written notice. The obligations of confidentiality shall survive for three (3) years post termination.
+
+4. LIMITATION OF LIABILITY
+Neither party shall be liable for any indirect, special, incidental, or consequential damages. In no event shall either party's aggregate liability exceed the total fees paid or payable by CyberScale to DataSync under this Agreement in the twelve (12) months preceding the claim, capped at $250,000.
+
+5. GOVERNING LAW AND JURISDICTION
+This Agreement shall be governed by, and construed in accordance with, the laws of the State of Delaware, United States, without regard to conflict of law principles.
+
+IN WITNESS WHEREOF, the parties have executed this Agreement by their duly authorized representatives.
+
+CyberScale Corp:
+By: Elena Rostova, Chief Executive Officer
+
+DataSync Global Inc.:
+By: David Chen, Chief Technology Officer

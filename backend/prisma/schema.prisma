@@ -1,0 +1,70 @@
+// DocuPulse AI - Prisma Schema
+// SQLite for zero-config local run, compatible with PostgreSQL/Supabase
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String     @id @default(uuid())
+  email     String     @unique
+  password  String
+  name      String
+  role      String     @default("analyst") // "admin", "analyst", "reviewer"
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  documents Document[]
+  chats     DocumentChat[]
+}
+
+model Document {
+  id               String         @id @default(uuid())
+  userId           String
+  user             User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title            String
+  originalFilename String
+  mimeType         String
+  fileSize         Int
+  filePath         String
+  status           String         @default("PENDING") // PENDING, PROCESSING, COMPLETED, FAILED, REVIEW_REQUIRED
+  documentType     String         @default("UNKNOWN") // INVOICE, CONTRACT, MEDICAL_RECORD, FINANCIAL_REPORT, RESUME, UNSTRUCTURED_NOTE
+  confidenceScore  Float          @default(0.0)
+  summary          String?
+  rawText          String?
+  extractedData    String?        // JSON string of structured entities, fields, line items
+  validationFlags  String?        // JSON string of anomalies, validation warnings
+  validationStatus String         @default("PENDING") // VALID, WARNING, INVALID, PENDING
+  processingTimeMs Int?           @default(0)
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+
+  auditLogs        AuditLog[]
+  chats            DocumentChat[]
+}
+
+model AuditLog {
+  id         String   @id @default(uuid())
+  documentId String
+  document   Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  action     String   // UPLOAD, CLASSIFY, EXTRACT, VALIDATE, USER_EDIT, EXPORT
+  details    String   // Details or JSON diff
+  performedBy String  @default("SYSTEM")
+  timestamp  DateTime @default(now())
+}
+
+model DocumentChat {
+  id         String    @id @default(uuid())
+  userId     String
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  documentId String?
+  document   Document? @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  role       String    // user, assistant
+  message    String
+  sources    String?   // JSON string of citations, line numbers, entity keys
+  createdAt  DateTime  @default(now())
+}

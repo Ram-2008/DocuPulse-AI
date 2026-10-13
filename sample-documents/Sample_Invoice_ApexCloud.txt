@@ -1,0 +1,45 @@
+================================================================================
+APEX CLOUD TECHNOLOGIES INC.
+100 Silicon Vista Blvd, Suite 400
+San Francisco, CA 94107
+Tax ID: US-84-2918471
+Contact: billing@apexcloud.io
+================================================================================
+
+COMMERCIAL INVOICE
+
+Invoice Number: INV-2026-089
+Invoice Date: 2026-03-15
+Due Date: 2026-04-15
+Payment Terms: Net 30 Days
+Currency: USD
+
+BILLED TO:
+Global Enterprise Solutions LLC
+750 Enterprise Way, Floor 12
+New York, NY 10001
+Attn: Accounts Payable (ap@globalent.com)
+
+--------------------------------------------------------------------------------
+ITEMIZED SERVICES & USAGE:
+--------------------------------------------------------------------------------
+Item # | Description                                | Qty      | Unit Price | Total
+--------------------------------------------------------------------------------
+1      | Enterprise AI Cloud Compute (Cluster A)    | 100 hrs  | $45.00     | $4,500.00
+2      | Managed Database Ingestion Service (TB/mo) | 1 month  | $3,950.00  | $3,950.00
+3      | Technical Support & 99.99% SLA Package     | 1 month  | $4,000.00  | $4,000.00
+--------------------------------------------------------------------------------
+
+SUBTOTAL:       $12,450.00
+STATE TAX (10%): $1,245.00
+--------------------------------------------------------------------------------
+TOTAL DUE:      $13,695.00
+--------------------------------------------------------------------------------
+
+REMITTANCE INSTRUCTIONS:
+Bank: Silicon Valley Commercial Bank
+Routing (ABA): 121000358
+Account: 9840291847
+Swift: SVBKUS33
+
+Thank you for your business!
